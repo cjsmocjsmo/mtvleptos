@@ -11,90 +11,52 @@ use crate::tvshowspage::TVShowsListPage;
 mod searchpage;
 use crate::searchpage::SearchPage;
 
-mod movapages;
-use crate::movapages::ActionPage;
-use crate::movapages::ArnoldPage;
 
-mod movbpages;
-use crate::movbpages::BruceLeePage;
-use crate::movbpages::BruceWillisPage;
-use crate::movbpages::BuzzPage;
+mod movpages {
+    pub mod movapages;
+    pub mod movbpages;
+    pub mod movcpages;
+    pub mod movdpages;
+    pub mod movfpages;
+    pub mod movgpages;
+    pub mod movhpages;
+    pub mod movipages;
+    pub mod movjpages;
+    pub mod movkpages;
+    pub mod movlpages;
+    pub mod movmpages;
+    pub mod movnpages;
+    pub mod movopages;
+    pub mod movppages;
+    pub mod movrpages;
+    pub mod movspages;
+    pub mod movtpages;
+    pub mod movvpages;
+    pub mod movxpages;
+}
 
-mod movcpages;
-use crate::movcpages::CartoonsPage;
-use crate::movcpages::CharlieBrownPage;
-use crate::movcpages::ChuckNorrisPage;
-use crate::movcpages::ComedyPage;
-
-mod movdpages;
-use crate::movdpages::DramaPage;
-use crate::movdpages::DocumentaryPage;
-
-mod movfpages;
-use crate::movfpages::FantasyPage;
-
-mod movgpages;
-use crate::movgpages::GhostBustersPage;
-use crate::movgpages::GodzillaPage;
-
-mod movhpages;
-use crate::movhpages::HarrisonFordPage;
-use crate::movhpages::HarryPotterPage;
-use crate::movhpages::HellBoyPage;
-
-mod movipages;
-use crate::movipages::IndianaJonesPage;
-
-mod movjpages;
-use crate::movjpages::JamesBondPage;
-use crate::movjpages::JohnWaynePage;
-use crate::movjpages::JohnWickPage;
-use crate::movjpages::JurassicParkPage;
-
-mod movkpages;
-use crate::movkpages::KevinCostnerPage;
-use crate::movkpages::KingsManPage;
-
-mod movlpages;
-use crate::movlpages::LegoPage;
-
-mod movmpages;
-use crate::movmpages::MenInBlackPage;
-use crate::movmpages::MinionsPage;
-use crate::movmpages::MiscPage;
-
-mod movnpages;
-use crate::movnpages::NicolasCagePage;
-
-mod movopages;
-use crate::movopages::OldiesPage;
-
-mod movppages;
-use crate::movppages::PandasPage;
-use crate::movppages::PiratesPage;
-
-mod movrpages;
-use crate::movrpages::RiddickPage;
-
-mod movspages;
-use crate::movspages::SciFiPage;
-use crate::movspages::StalonePage;
-use crate::movspages::StarTrekPage;
-use crate::movspages::StarWarsPage;
-use crate::movspages::SuperHerosPage;
-
-mod movtpages;
-use crate::movtpages::TinkerBellPage;
-use crate::movtpages::TomCruisePage;
-use crate::movtpages::TransformersPage;
-use crate::movtpages::TremorsPage;
-use crate::movtpages::TheRockPage;
-
-mod movvpages;
-use crate::movvpages::VanDamPage;
-
-mod movxpages;
-use crate::movxpages::XMenPage;
+use crate::movpages::movapages::{ActionPage, ArnoldPage};
+use crate::movpages::movbpages::{BruceLeePage, BruceWillisPage, BuzzPage};
+use crate::movpages::movcpages::{CartoonsPage, CharlieBrownPage, ChuckNorrisPage, ComedyPage};
+use crate::movpages::movdpages::{DramaPage, DocumentaryPage};
+use crate::movpages::movfpages::FantasyPage;
+use crate::movpages::movgpages::{GhostBustersPage, GodzillaPage};
+use crate::movpages::movhpages::{HarrisonFordPage, HarryPotterPage, HellBoyPage};
+use crate::movpages::movipages::IndianaJonesPage;
+use crate::movpages::movjpages::{JamesBondPage, JohnWaynePage, JohnWickPage, JurassicParkPage};
+use crate::movpages::movkpages::KevinCostnerPage;
+use crate::movpages::movkpages::KingsManPage;
+use crate::movpages::movlpages::LegoPage;
+use crate::movpages::movmpages::{MenInBlackPage, MinionsPage, MiscPage};
+use crate::movpages::movnpages::NicolasCagePage;
+use crate::movpages::movopages::OldiesPage;
+use crate::movpages::movppages::PandasPage;
+use crate::movpages::movppages::PiratesPage;
+use crate::movpages::movrpages::RiddickPage;
+use crate::movpages::movspages::{SciFiPage, StalonePage, StarTrekPage, StarWarsPage, SuperHerosPage};
+use crate::movpages::movtpages::{TinkerBellPage, TomCruisePage, TransformersPage, TremorsPage, TheRockPage};
+use crate::movpages::movvpages::VanDamPage;
+use crate::movpages::movxpages::XMenPage;
 
 fn main() {
 	console_error_panic_hook::set_once();
