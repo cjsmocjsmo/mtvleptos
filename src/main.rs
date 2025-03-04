@@ -34,7 +34,7 @@ mod movfpages;
 use crate::movfpages::FantasyPage;
 
 mod movgpages;
-use crate::movgpages::GhostBusterPage;
+use crate::movgpages::GhostBustersPage;
 use crate::movgpages::GodzillaPage;
 
 mod movhpages;
@@ -124,7 +124,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/documentary") view=DocumentaryPage />
                     <Route path=path!("/drama") view=DramaPage />
                     <Route path=path!("/fantasy") view=FantasyPage />
-                    <Route path=path!("/ghostbuster") view=GhostBusterPage />
+                    <Route path=path!("/ghostbuster") view=GhostBustersPage />
                     <Route path=path!("/godzilla") view=GodzillaPage />
                     <Route path=path!("/harrisonford") view=HarrisonFordPage />
                     <Route path=path!("/harrypotter") view=HarryPotterPage />
