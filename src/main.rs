@@ -61,12 +61,22 @@ mod tvpages {
     pub mod tvcomedypage;
     pub mod tvfantasypage;
     pub mod tvmcupage;
+    pub mod tvsciencepage;
+    pub mod tvscifipage;
+    pub mod tvstartrekpage;
+    pub mod tvstarwarspage;
+    pub mod tvwesternspage;
 }
 
 use crate::tvpages::tvactionpage::TVActionPage;
 use crate::tvpages::tvcomedypage::TVComedyPage;
 use crate::tvpages::tvfantasypage::TVFantasyPage;
 use crate::tvpages::tvmcupage::TVMCUPage;
+use crate::tvpages::tvsciencepage::TVSciencePage;
+use crate::tvpages::tvscifipage::TVSciFiPage;
+use crate::tvpages::tvstartrekpage::TVStarTrekPage;
+use crate::tvpages::tvstarwarspage::TVStarWarsPage;
+use crate::tvpages::tvwesternspage::TVWesternsPage;
 
 
 
@@ -136,7 +146,11 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvcomedypage") view=TVComedyPage />
                     <Route path=path!("/tvfantasypage") view=TVFantasyPage />
                     <Route path=path!("/tvmcupage") view=TVMCUPage />
-
+                    <Route path=path!("/tvscience") view=TVSciencePage />
+                    <Route path=path!("/tvscifi") view=TVSciFiPage />
+                    <Route path=path!("/startrek") view=TVStarTrekPage />
+                    <Route path=path!("/starwars") view=TVStarWarsPage />
+                    <Route path=path!("/westerns") view=TVWesternsPage />
                 </Routes>
             </main>
         </Router>

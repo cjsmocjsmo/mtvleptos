@@ -9,11 +9,11 @@ pub fn TVShowsListPage() -> impl IntoView {
                 <a class="tvshows-sectionDivItem" href="/tvcomedypage">"Comedy"</a>
                 <a class="tvshows-sectionDivItem" href="/tvfantasypage">"Fantasy"</a>
                 <a class="tvshows-sectionDivItem" href="/tvmcupage">"MCU"</a>
-                <a class="tvshows-sectionDivItem" href="">"Science"</a>
-                <a class="tvshows-sectionDivItem" href="">"SciFi"</a>
-                <a class="tvshows-sectionDivItem" href="">"Star Trek"</a>
-                <a class="tvshows-sectionDivItem" href="">"Star Wars"</a>
-                <a class="tvshows-sectionDivItem" href="">"Westerns"</a>
+                <a class="tvshows-sectionDivItem" href="/tvscience">"Science"</a>
+                <a class="tvshows-sectionDivItem" href="/tvscifi">"SciFi"</a>
+                <a class="tvshows-sectionDivItem" href="/startrek">"Star Trek"</a>
+                <a class="tvshows-sectionDivItem" href="/starwars">"Star Wars"</a>
+                <a class="tvshows-sectionDivItem" href="/westerns">"Westerns"</a>
             </div>
         </div>
     }

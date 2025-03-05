@@ -4,7 +4,7 @@ use leptos::prelude::*;
 #[component]
 pub fn TVActionPage() -> impl IntoView {
     view! {
-        <div class="tv-grid">
+        <div class="tv-ass">
             // <div class="tv-item">
                 <img src="http://10.0.4.41:9090/shogun.webp" alt="Showgun" />
                 <img src="http://10.0.4.41:9090/continental.webp" alt="Continental" />
