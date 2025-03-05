@@ -5,10 +5,10 @@ use leptos::prelude::*;
 pub fn TVActionPage() -> impl IntoView {
     view! {
         <div class="tv-grid">
-            <div class="tv-item">
+            // <div class="tv-item">
                 <img src="http://10.0.4.41:9090/shogun.webp" alt="Showgun" />
                 <img src="http://10.0.4.41:9090/continental.webp" alt="Continental" />
-            </div>
+            // </div>
         </div>
     }
 }
