@@ -148,9 +148,9 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvmcupage") view=TVMCUPage />
                     <Route path=path!("/tvscience") view=TVSciencePage />
                     <Route path=path!("/tvscifi") view=TVSciFiPage />
-                    <Route path=path!("/startrek") view=TVStarTrekPage />
-                    <Route path=path!("/starwars") view=TVStarWarsPage />
-                    <Route path=path!("/westerns") view=TVWesternsPage />
+                    <Route path=path!("/tvstartrek") view=TVStarTrekPage />
+                    <Route path=path!("/tvstarwars") view=TVStarWarsPage />
+                    <Route path=path!("/tvwesterns") view=TVWesternsPage />
                 </Routes>
             </main>
         </Router>
