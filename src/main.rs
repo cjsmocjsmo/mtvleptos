@@ -58,6 +58,14 @@ use crate::movpages::movtpages::{TinkerBellPage, TomCruisePage, TransformersPage
 use crate::movpages::movvpages::VanDamPage;
 use crate::movpages::movxpages::XMenPage;
 
+mod tvpages {
+    pub mod tvactionpage;
+}
+
+use crate::tvpages::tvactionpage::TVActionPage;
+
+
+
 fn main() {
 	console_error_panic_hook::set_once();
     mount_to_body(App);
@@ -119,6 +127,8 @@ fn App() -> impl IntoView {
                     <Route path=path!("/therock") view=TheRockPage />
                     <Route path=path!("/vandam") view=VanDamPage />
                     <Route path=path!("/xmen") view=XMenPage />
+
+                    <Route path=path!("/tvactionpage") view=TVActionPage />
 
                 </Routes>
             </main>

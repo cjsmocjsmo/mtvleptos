@@ -5,7 +5,7 @@ pub fn TVShowsListPage() -> impl IntoView {
     view! {
         <div class="tvshows-section">
             <div class="tvshows-sectionDiv">
-                <a class="tvshows-sectionDivItem" href="/tvpages/tvactionpage">"Action"</a>
+                <a class="tvshows-sectionDivItem" href="/tvactionpage">"Action"</a>
                 <a class="tvshows-sectionDivItem" href="">"Comedy"</a>
                 <a class="tvshows-sectionDivItem" href="">"Fantasy"</a>
                 <a class="tvshows-sectionDivItem" href="">"MCU"</a>
