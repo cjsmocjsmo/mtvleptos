@@ -11,7 +11,6 @@ use crate::tvshowspage::TVShowsListPage;
 mod searchpage;
 use crate::searchpage::SearchPage;
 
-
 mod movpages {
     pub mod movapages;
     pub mod movbpages;
@@ -34,7 +33,6 @@ mod movpages {
     pub mod movvpages;
     pub mod movxpages;
 }
-
 use crate::movpages::movapages::{ActionPage, ArnoldPage};
 use crate::movpages::movbpages::{BruceLeePage, BruceWillisPage, BuzzPage};
 use crate::movpages::movcpages::{CartoonsPage, CharlieBrownPage, ChuckNorrisPage, ComedyPage};
@@ -61,10 +59,14 @@ use crate::movpages::movxpages::XMenPage;
 mod tvpages {
     pub mod tvactionpage;
     pub mod tvcomedypage;
+    pub mod tvfantasypage;
+    pub mod tvmcupage;
 }
 
 use crate::tvpages::tvactionpage::TVActionPage;
 use crate::tvpages::tvcomedypage::TVComedyPage;
+use crate::tvpages::tvfantasypage::TVFantasyPage;
+use crate::tvpages::tvmcupage::TVMCUPage;
 
 
 
@@ -132,6 +134,8 @@ fn App() -> impl IntoView {
 
                     <Route path=path!("/tvactionpage") view=TVActionPage />
                     <Route path=path!("/tvcomedypage") view=TVComedyPage />
+                    <Route path=path!("/tvfantasypage") view=TVFantasyPage />
+                    <Route path=path!("/tvmcupage") view=TVMCUPage />
 
                 </Routes>
             </main>
