@@ -60,9 +60,11 @@ use crate::movpages::movxpages::XMenPage;
 
 mod tvpages {
     pub mod tvactionpage;
+    pub mod tvcomedypage;
 }
 
 use crate::tvpages::tvactionpage::TVActionPage;
+use crate::tvpages::tvcomedypage::TVComedyPage;
 
 
 
@@ -129,6 +131,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/xmen") view=XMenPage />
 
                     <Route path=path!("/tvactionpage") view=TVActionPage />
+                    <Route path=path!("/tvcomedypage") view=TVComedyPage />
 
                 </Routes>
             </main>
