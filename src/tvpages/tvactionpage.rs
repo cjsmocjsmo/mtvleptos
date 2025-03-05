@@ -7,7 +7,7 @@ pub fn TVActionPage() -> impl IntoView {
         <div class="tv-grid">
             <div class="tv-item">
                 <img src="http://10.0.4.41:9090/shogun.webp" alt="Showgun" />
-                <ing src="http://10.0.4.41:9090/continental.webp" alt="Continental" />
+                <img src="http://10.0.4.41:9090/continental.webp" alt="Continental" />
             </div>
         </div>
     }
