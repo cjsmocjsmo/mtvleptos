@@ -24,12 +24,9 @@ pub fn SciFiPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -55,12 +52,9 @@ pub fn StalonePage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -71,12 +65,6 @@ async fn fetch_stalone() -> Result<Vec<Infos>, Error> {
     Ok(stalone)
 }
 
-// #[component]
-// pub fn StarTrekPage() -> impl IntoView {
-//     view! {
-//         <h1>"StarTrek Page"</h1>
-//     }
-// }
 #[component]
 pub fn StarTrekPage() -> impl IntoView {
     let (infos, set_infos) = signal(Vec::new());
@@ -92,12 +80,9 @@ pub fn StarTrekPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -108,12 +93,6 @@ async fn fetch_startrek() -> Result<Vec<Infos>, Error> {
     Ok(startrek)
 }
 
-// #[component]
-// pub fn StarWarsPage() -> impl IntoView {
-//     view! {
-//         <h1>"StarWars Page"</h1>
-//     }
-// }
 #[component]
 pub fn StarWarsPage() -> impl IntoView {
     let (infos, set_infos) = signal(Vec::new());
@@ -129,12 +108,9 @@ pub fn StarWarsPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -145,12 +121,6 @@ async fn fetch_starwars() -> Result<Vec<Infos>, Error> {
     Ok(starwars)
 }
 
-// #[component]
-// pub fn SuperHeroesPage() -> impl IntoView {
-//     view! {
-//         <h1>"SuperHeroes Page"</h1>
-//     }
-// }
 #[component]
 pub fn SuperHerosPage() -> impl IntoView {
     let (infos, set_infos) = signal(Vec::new());
@@ -166,12 +136,9 @@ pub fn SuperHerosPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }

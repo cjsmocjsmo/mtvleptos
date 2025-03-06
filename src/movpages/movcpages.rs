@@ -24,12 +24,9 @@ pub fn CartoonsPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -55,12 +52,9 @@ pub fn CharlieBrownPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -86,12 +80,9 @@ pub fn ChuckNorrisPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -117,12 +108,9 @@ pub fn ComedyPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }

@@ -24,12 +24,9 @@ pub fn TinkerBellPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -55,12 +52,9 @@ pub fn TomCruisePage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -86,12 +80,9 @@ pub fn TransformersPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -117,12 +108,9 @@ pub fn TremorsPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
@@ -148,12 +136,9 @@ pub fn TheRockPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
