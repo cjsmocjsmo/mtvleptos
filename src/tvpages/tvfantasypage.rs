@@ -5,11 +5,9 @@ use leptos::prelude::*;
 pub fn TVFantasyPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-            // <div class="tv-item">
-                <img src="http://10.0.4.41:9090/houseofthedragon.webp" alt="House of the Dragon" />
-                <img src="http://10.0.4.41:9090/thelordoftheringsringsofpower.webp" alt="The Rings of Power" />
-                <img src="http://10.0.4.41:9090/wheeloftime.webp" alt="The Wheel Of Time" />
-            // </div>
+            <img src="http://10.0.4.41:9090/houseofthedragon.webp" alt="House of the Dragon" />
+            <img src="http://10.0.4.41:9090/thelordoftheringsringsofpower.webp" alt="The Rings of Power" />
+            <img src="http://10.0.4.41:9090/wheeloftime.webp" alt="The Wheel Of Time" />
         </div>
     }
 }

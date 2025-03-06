@@ -5,15 +5,15 @@ use leptos::prelude::*;
 pub fn TVStarTrekPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-                <img src="http://10.0.4.41:9090/voyager.webp" alt="Secret Invation" />
-                <img src="http://10.0.4.41:9090/sttv.webp" alt="I Am Groot" />
-                <img src="http://10.0.4.41:9090/enterprise.webp" alt="Loki" />
-                <img src="http://10.0.4.41:9090/nextgen.webp" alt="MoonKnight" />
-                <img src="http://10.0.4.41:9090/discovery.webp" alt="SheHulk" />
-                <img src="http://10.0.4.41:9090/picard.webp" alt="Hawkeye" />
-                <img src="http://10.0.4.41:9090/lowerdecks.webp" alt="Falcon And The Winter Soldier" />
-                <img src="http://10.0.4.41:9090/prodigy.webp" alt="Foundation" />
-                <img src="http://10.0.4.41:9090/strangenewworlds.webp" alt="Altered Carbon" />
+            <img src="http://10.0.4.41:9090/voyager.webp" alt="voyager" />
+            <img src="http://10.0.4.41:9090/sttv.webp" alt="STTV" />
+            <img src="http://10.0.4.41:9090/enterprise.webp" alt="enterprise" />
+            <img src="http://10.0.4.41:9090/nextgen.webp" alt="next generation" />
+            <img src="http://10.0.4.41:9090/discovery.webp" alt="discovery" />
+            <img src="http://10.0.4.41:9090/picard.webp" alt="picard" />
+            <img src="http://10.0.4.41:9090/lowerdecks.webp" alt="lower decks" />
+            <img src="http://10.0.4.41:9090/prodigy.webp" alt="prodigy" />
+            <img src="http://10.0.4.41:9090/strangenewworlds.webp" alt="strange new worlds" />
         </div>
     }
 }

@@ -78,8 +78,6 @@ use crate::tvpages::tvstartrekpage::TVStarTrekPage;
 use crate::tvpages::tvstarwarspage::TVStarWarsPage;
 use crate::tvpages::tvwesternspage::TVWesternsPage;
 
-
-
 fn main() {
 	console_error_panic_hook::set_once();
     mount_to_body(App);
