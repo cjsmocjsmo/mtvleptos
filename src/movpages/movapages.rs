@@ -24,7 +24,7 @@ pub fn ActionPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
                 <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
