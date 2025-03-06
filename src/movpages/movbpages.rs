@@ -24,15 +24,23 @@ pub fn BruceLeePage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-grid">
+        <div class="mov-row">
             {move || infos.get().iter().map(|info| view! {
-                <div class="mov-item">
-                    <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
-                    <p>{info.Name.clone()}</p>
-                </div>
+                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
             }).collect_view()}
         </div>
     }
+
+    // view! {
+    //     <div class="mov-grid">
+    //         {move || infos.get().iter().map(|info| view! {
+    //             <div class="mov-item">
+    //                 <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+    //                 <p>{info.Name.clone()}</p>
+    //             </div>
+    //         }).collect_view()}
+    //     </div>
+    // }
 }
 async fn fetch_brucelee() -> Result<Vec<Infos>, Error> {
     let response = reqwest::get("http://10.0.4.41:7777/brucelee").await?;
