@@ -4,8 +4,9 @@ use leptos::prelude::*;
 pub fn SearchPage() -> impl IntoView {
 
     view! {
-        <h1>"SearchPage"</h1>
-        <input type="text" placeholder="Search..." />
-        <input type="submit" value="Search" />
+        <div class="searchDiv">
+            <input class="search-input" type="text" placeholder="Search..." />
+            <button class="searchButton">Search</button>
+        </div>
     }
 }
