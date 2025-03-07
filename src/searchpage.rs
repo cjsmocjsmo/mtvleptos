@@ -5,8 +5,10 @@ pub fn SearchPage() -> impl IntoView {
 
     view! {
         <div class="searchDiv">
-            <input class="search-input" type="text" placeholder="Search..." />
-            <button class="searchButton">Search</button>
+            <div class="searchInnerDiv">
+                <input class="search-input" type="text" placeholder="Search..." />
+                <button class="searchButton">Search</button>
+            </div>
         </div>
     }
 }
