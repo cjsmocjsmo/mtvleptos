@@ -120,7 +120,7 @@ mod seasonpages {
     pub mod tvskeletoncrewseapage;
     pub mod tvstrangenewworldsseapage;
     pub mod tvsttvseapage;
-    pub mod tvtailsofthejediseapage;
+    pub mod tvtalesofthejediseapage;
     pub mod tvthelordoftheringsringsofpowerseapage;
     pub mod tvvisionsseapage;
     pub mod tvvoyagerseapage;
@@ -169,7 +169,7 @@ use crate::seasonpages::tvsiloseapage::TVSiloSeaPage;
 use crate::seasonpages::tvskeletoncrewseapage::TVSkeletonCrewSeaPage;
 use crate::seasonpages::tvstrangenewworldsseapage::TVStrangeNewWorldsSeaPage;
 use crate::seasonpages::tvsttvseapage::TVSTTVSeaPage;
-use crate::seasonpages::tvtailsofthejediseapage::TVTailsOfTheJediSeaPage;
+use crate::seasonpages::tvtalesofthejediseapage::TVTailsOfTheJediSeaPage;
 use crate::seasonpages::tvthelordoftheringsringsofpowerseapage::TVTheLordOfTheRingsRingsOfPowerSeaPagePage;
 use crate::seasonpages::tvvisionsseapage::TVVisionsSeaPage;
 use crate::seasonpages::tvvoyagerseapage::TVVoyagerSeaPage;
