@@ -5,15 +5,33 @@ use leptos::prelude::*;
 pub fn TVStarWarsPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-            <img src="http://10.0.4.41:9090/skeletoncrew.webp" alt="skeleton crew" />
-            <img src="http://10.0.4.41:9090/ahsoka.webp" alt="ahsoka" />
-            <img src="http://10.0.4.41:9090/andor.webp" alt="andor" />
-            <img src="http://10.0.4.41:9090/badbatch.webp" alt="bad batch" />
-            <img src="http://10.0.4.41:9090/bobafett.webp" alt="boba fett" />
-            <img src="http://10.0.4.41:9090/mandalorian.webp" alt="mandalorian" />
-            <img src="http://10.0.4.41:9090/talesofthejedi.webp" alt="tales of the jedi" />
-            <img src="http://10.0.4.41:9090/obiwan.webp" alt="obiwan" />
-            <img src="http://10.0.4.41:9090/visions.webp" alt="visions" />
+            <a href="/tvskeletoncrewseapage">
+                <img src="http://10.0.4.41:9090/skeletoncrew.webp" alt="skeleton crew" />
+            </a>
+            <a href="/tvahsokaseapage">
+                <img src="http://10.0.4.41:9090/ahsoka.webp" alt="ahsoka" />
+            </a>
+            <a href="/tvandorsepage">
+                <img src="http://10.0.4.41:9090/andor.webp" alt="andor" />
+            </a>
+            <a href="/tvbadbatchseapage">
+                <img src="http://10.0.4.41:9090/badbatch.webp" alt="bad batch" />
+            </a>
+            <a href="/tvbobafettseapage">
+                <img src="http://10.0.4.41:9090/bobafett.webp" alt="boba fett" />
+            </a>
+            <a href="/tvmandilorianseapage">
+                <img src="http://10.0.4.41:9090/mandalorian.webp" alt="mandalorian" />
+            </a>
+            <a href="/tvtalesofthejediseapage">
+                <img src="http://10.0.4.41:9090/talesofthejedi.webp" alt="tales of the jedi" />
+            </a>
+            <a href="/tvobiwansepage">
+                <img src="http://10.0.4.41:9090/obiwan.webp" alt="obiwan" />
+            </a>
+            <a href="/tvvisionsseapage">
+                <img src="http://10.0.4.41:9090/visions.webp" alt="visions" />
+            </a>
         </div>
     }
 }
