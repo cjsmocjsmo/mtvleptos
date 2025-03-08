@@ -113,7 +113,7 @@ mod seasonpages {
     pub mod tvprehistoricplanetseapage;
     pub mod tvprodigyseapage;
     pub mod tvraisedbywolvesseapage;
-    pub mod tvsecretinvasionseapage
+    pub mod tvsecretinvasionseapage;
     pub mod tvshehulkseapage;
     pub mod tvshogunseapage;
     pub mod tvsiloseapage;
