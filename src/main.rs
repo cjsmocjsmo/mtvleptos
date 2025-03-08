@@ -80,15 +80,38 @@ use crate::tvpages::tvwesternspage::TVWesternsPage;
 
 mod seasonpages {
     pub mod tvcontinentalseapage;
+    pub mod tvfalconwintersoldierseapage;
     pub mod tvfobarseapage;
+    pub mod tvhawkeyeseapage;
+    pub mod tvhouseofthedragonseapage;
+    pub mod tviamgrootseapage;
+    pub mod tvlokiseapage;
+    pub mod tvmoonknightseapage;
+    pub mod tvprehistoricplanetseapage
+    pub mod tvsecretinvasionseapage;
+    pub mod tvshehulkseapage;
     pub mod tvshogunseapage;
-    
+    pub mod tvthelordoftheringsringsofpowerseapage;
+    pub mod tvwandavisionseapage;
+    pub mod tvwheeloftimeseapage;
     
 }
 
 use crate::seasonpages::tvcontinentalseapage::TVContinentalSeaPage;
+use crate::seasonpages::tvfalconwintersoldierseapage::TVFalconWinterSoldierSeaPage;
 use crate::seasonpages::tvfobarseapage::TVFobarSeaPage;
+use crate::seasonpages::tvhawkeyeseapage::TVHawkeyeSeaPage;
+use crate::seasonpages::tvhouseofthedragonseapage::TVHouseOfTheDragonSeaPage;
+use crate::seasonpages::tviamgrootseapage::TVIAmGrootSeaPage;
+use crate::seasonpages::tvlokiseapage::TVLokiSeaPage;
+use crate::seasonpages::tvmoonknightseapage::TVMoonKnightSeaPage;
+use crate::seasonpages::tvprehistoricplanetseapage::TVPreHistoricPlanetSeaPage;
+use crate::seasonpages::tvsecretinvasionseapage::TVSecretInvasionSeaPage;
+use crate::seasonpages::tvshehulkseapage::TVSheHulkSeaPage;
 use crate::seasonpages::tvshogunseapage::TVShogunSeaPage;
+use crate::seasonpages::tvthelordoftheringsringsofpowerseapage::TVTheLordOfTheRingsRingsOfPowerSeaPagePage;
+use crate::seasonpages::tvwandavisionseapage::TVWandaVisionSeaPage;
+use crate::seasonpages::tvwheeloftimeseapage::TVWheelOfTimeSeaPage;
 
 
 fn main() {
@@ -164,8 +187,20 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvwesterns") view=TVWesternsPage />
 
                     <Route path=path!("/tvcontinentalseapage") view=TVContinentalSeaPage />
+                    <Route path=path!("/tvfalconwintersoldierseapage") view=TVFalconWinterSoldierSeaPage />
                     <Route path=path!("/tvfobarseapage") view=TVFobarSeaPage />
+                    <Route path=path!("/tvhawkeyeseapage") view=TVHawkeyeSeaPage />
+                    <Route path=path!("/tvhouseofthedragonseapage") view=TVHouseOfTheDragonSeaPage />
+                    <Route path=path!("/tviamgrootseapage") view=TVIAmGrootSeaPage />
+                    <Route path=path!("/tvlokiseapage") view=TVLokiSeaPage />
+                    <Route path=path!("/tvmoonknightseapage") view=TVMoonKnightSeaPage />
+                    <Route path=path!("/tvprehistoricplanetseapage") view=TVPreHistoricPlanetSeaPage />
+                    <Route path=path!("/tvsecretinvasionseapage") view=TVSecretInvasionSeaPage />
+                    <Route path=path!("/tvshehulkseapage") view=TVSheHulkSeaPage />
                     <Route path=path!("/tvshogunseapage") view=TVShogunSeaPage />
+                    <Route path=path!("/tvthelordoftheringsringsofpowerseapage") view=TVTheLordOfTheRingsRingsOfPowerSeaPagePage />
+                    <Route path=path!("/tvwandavisionseapage") view=TVWandaVisionSeaPage />
+                    <Route path=path!("/tvwheeloftimeseapage") view=TVWheelOfTimeSeaPage />
                 </Routes>
             </main>
         </Router>
