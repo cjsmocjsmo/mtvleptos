@@ -169,7 +169,7 @@ use crate::seasonpages::tvsiloseapage::TVSiloSeaPage;
 use crate::seasonpages::tvskeletoncrewseapage::TVSkeletonCrewSeaPage;
 use crate::seasonpages::tvstrangenewworldsseapage::TVStrangeNewWorldsSeaPage;
 use crate::seasonpages::tvsttvseapage::TVSTTVSeaPage;
-use crate::seasonpages::tvtalesofthejediseapage::TVTailsOfTheJediSeaPage;
+use crate::seasonpages::tvtalesofthejediseapage::TVTalesOfTheJediSeaPage;
 use crate::seasonpages::tvthelordoftheringsringsofpowerseapage::TVTheLordOfTheRingsRingsOfPowerSeaPagePage;
 use crate::seasonpages::tvvisionsseapage::TVVisionsSeaPage;
 use crate::seasonpages::tvvoyagerseapage::TVVoyagerSeaPage;
@@ -290,7 +290,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvskeletoncrewseapage") view=TVSkeletonCrewSeaPage />
                     <Route path=path!("/tvstrangenewworldsseapage") view=TVStrangeNewWorldsSeaPage />
                     <Route path=path!("/tvsttvseapage") view=TVSTTVSeaPage />
-                    <Route path=path!("/tvtailsofthejediseapage") view=TVTailsOfTheJediSeaPage />
+                    <Route path=path!("/tvtailsofthejediseapage") view=TVTalesOfTheJediSeaPage />
                     <Route path=path!("/tvthelordoftheringsringsofpowerseapage") view=TVTheLordOfTheRingsRingsOfPowerSeaPagePage />
                     <Route path=path!("/tvvisionsseapage") view=TVVisionsSeaPage />
                     <Route path=path!("/tvvoyagerseapage") view=TVVoyagerSeaPage />
