@@ -5,8 +5,12 @@ use leptos::prelude::*;
 pub fn TVActionPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-            <img src="http://10.0.4.41:9090/shogun.webp" alt="Showgun" />
-            <img src="http://10.0.4.41:9090/continental.webp" alt="Continental" />
+            <a href="/tvcontinentalseapage">
+                <img src="http://10.0.4.41:9090/continental.webp" alt="Continental" />
+            </a>
+            <a href="/tvshogunseapage">
+                <img src="http://10.0.4.41:9090/shogun.webp" alt="Showgun" />
+            </a>
         </div>
     }
 }

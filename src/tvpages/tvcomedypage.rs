@@ -5,7 +5,9 @@ use leptos::prelude::*;
 pub fn TVComedyPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-            <img src="http://10.0.4.41:9090/fubar.webp" alt="Comedy" />
+            <a href="/fubar">
+                <img src="http://10.0.4.41:9090/fubar.webp" alt="Comedy" />
+            </a>
         </div>
     }
 }

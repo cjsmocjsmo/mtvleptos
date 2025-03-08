@@ -78,6 +78,19 @@ use crate::tvpages::tvstartrekpage::TVStarTrekPage;
 use crate::tvpages::tvstarwarspage::TVStarWarsPage;
 use crate::tvpages::tvwesternspage::TVWesternsPage;
 
+mod seasonpages {
+    pub mod tvcontinentalseapage;
+    pub mod tvfobarseapage;
+    pub mod tvshogunseapage;
+    
+    
+}
+
+use crate::seasonpages::tvcontinentalseapage::TVContinentalSeaPage;
+use crate::seasonpages::tvfobarseapage::TVFobarSeaPage;
+use crate::seasonpages::tvshogunseapage::TVShogunSeaPage;
+
+
 fn main() {
 	console_error_panic_hook::set_once();
     mount_to_body(App);
@@ -149,6 +162,10 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvstartrek") view=TVStarTrekPage />
                     <Route path=path!("/tvstarwars") view=TVStarWarsPage />
                     <Route path=path!("/tvwesterns") view=TVWesternsPage />
+
+                    <Route path=path!("/tvcontinentalseapage") view=TVContinentalSeaPage />
+                    <Route path=path!("/tvfobarseapage") view=TVFobarSeaPage />
+                    <Route path=path!("/tvshogunseapage") view=TVShogunSeaPage />
                 </Routes>
             </main>
         </Router>
