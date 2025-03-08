@@ -7,6 +7,33 @@ use serde::Deserialize;
 struct Infos {
     Name: String,
     HttpThumbPath: String,
+    MovId: String,
+}
+
+async fn fetch_cartoons() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/cartoons").await?;
+    let cartoons: Vec<Infos> = response.json().await?;
+    Ok(cartoons)
+}
+async fn fetch_charliebrown() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/charliebrown").await?;
+    let charliebrown: Vec<Infos> = response.json().await?;
+    Ok(charliebrown)
+}
+async fn fetch_chucknorris() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/chucknorris").await?;
+    let chucknorris: Vec<Infos> = response.json().await?;
+    Ok(chucknorris)
+}
+async fn fetch_comedy() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/comedy").await?;
+    let comedy: Vec<Infos> = response.json().await?;
+    Ok(comedy)
+}
+async fn send_get_request(mov_id: &str) -> Result<(), Error> {
+    let url = format!("http://10.0.4.777:8080/player_set_media/{}", mov_id);
+    reqwest::get(&url).await?;
+    Ok(())
 }
 
 #[component]
@@ -18,23 +45,32 @@ pub fn CartoonsPage() -> impl IntoView {
             Ok(data) => {
                 log::info!("Fetched infos data: {:?}", data); // Debugging log
                 set_infos.set(data);
-            },
+            }
             Err(err) => log::error!("Error fetching infos data: {:?}", err),
         }
     });
 
     view! {
         <div class="mov-row">
-            {move || infos.get().iter().map(|info| view! {
-                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img
+                        src={info.HttpThumbPath.clone()}
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
             }).collect_view()}
         </div>
     }
-}
-async fn fetch_cartoons() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/cartoons").await?;
-    let cartoons: Vec<Infos> = response.json().await?;
-    Ok(cartoons)
 }
 
 #[component]
@@ -46,23 +82,32 @@ pub fn CharlieBrownPage() -> impl IntoView {
             Ok(data) => {
                 log::info!("Fetched infos data: {:?}", data); // Debugging log
                 set_infos.set(data);
-            },
+            }
             Err(err) => log::error!("Error fetching infos data: {:?}", err),
         }
     });
 
     view! {
         <div class="mov-row">
-            {move || infos.get().iter().map(|info| view! {
-                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img
+                        src={info.HttpThumbPath.clone()}
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
             }).collect_view()}
         </div>
     }
-}
-async fn fetch_charliebrown() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/charliebrown").await?;
-    let charliebrown: Vec<Infos> = response.json().await?;
-    Ok(charliebrown)
 }
 
 #[component]
@@ -74,23 +119,32 @@ pub fn ChuckNorrisPage() -> impl IntoView {
             Ok(data) => {
                 log::info!("Fetched infos data: {:?}", data); // Debugging log
                 set_infos.set(data);
-            },
+            }
             Err(err) => log::error!("Error fetching infos data: {:?}", err),
         }
     });
 
     view! {
         <div class="mov-row">
-            {move || infos.get().iter().map(|info| view! {
-                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img
+                        src={info.HttpThumbPath.clone()}
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
             }).collect_view()}
         </div>
     }
-}
-async fn fetch_chucknorris() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/chucknorris").await?;
-    let chucknorris: Vec<Infos> = response.json().await?;
-    Ok(chucknorris)
 }
 
 #[component]
@@ -102,21 +156,30 @@ pub fn ComedyPage() -> impl IntoView {
             Ok(data) => {
                 log::info!("Fetched infos data: {:?}", data); // Debugging log
                 set_infos.set(data);
-            },
+            }
             Err(err) => log::error!("Error fetching infos data: {:?}", err),
         }
     });
 
     view! {
         <div class="mov-row">
-            {move || infos.get().iter().map(|info| view! {
-                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img
+                        src={info.HttpThumbPath.clone()}
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
             }).collect_view()}
         </div>
     }
-}
-async fn fetch_comedy() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/comedy").await?;
-    let comedy: Vec<Infos> = response.json().await?;
-    Ok(comedy)
 }

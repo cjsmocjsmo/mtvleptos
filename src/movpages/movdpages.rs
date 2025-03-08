@@ -7,6 +7,22 @@ use serde::Deserialize;
 struct Infos {
     Name: String,
     HttpThumbPath: String,
+    MovId: String,
+}
+async fn fetch_drama() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/drama").await?;
+    let drama: Vec<Infos> = response.json().await?;
+    Ok(drama)
+}
+async fn fetch_documentary() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/documentary").await?;
+    let documentary: Vec<Infos> = response.json().await?;
+    Ok(documentary)
+}
+async fn send_get_request(mov_id: &str) -> Result<(), Error> {
+    let url = format!("http://10.0.4.777:8080/player_set_media/{}", mov_id);
+    reqwest::get(&url).await?;
+    Ok(())
 }
 
 #[component]
@@ -25,16 +41,25 @@ pub fn DramaPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {move || infos.get().iter().map(|info| view! {
-                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img 
+                        src={info.HttpThumbPath.clone()} 
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
             }).collect_view()}
         </div>
     }
-}
-async fn fetch_drama() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/drama").await?;
-    let drama: Vec<Infos> = response.json().await?;
-    Ok(drama)
 }
 
 #[component]
@@ -53,14 +78,23 @@ pub fn DocumentaryPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {move || infos.get().iter().map(|info| view! {
-                <img src={info.HttpThumbPath.clone()} alt={info.Name.clone()} />
+            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img 
+                        src={info.HttpThumbPath.clone()} 
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
             }).collect_view()}
         </div>
     }
-}
-async fn fetch_documentary() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/documentary").await?;
-    let documentary: Vec<Infos> = response.json().await?;
-    Ok(documentary)
 }
