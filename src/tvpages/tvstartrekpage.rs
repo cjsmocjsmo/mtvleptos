@@ -8,21 +8,22 @@ pub fn TVStarTrekPage() -> impl IntoView {
             <a href="/tvvoyagerseapage">
                 <img src="http://10.0.4.41:9090/voyager.webp" alt="voyager" />
             </a>
-            <a href="/tvsttvseapage"
+            <a href="/tvsttvseapage">
                 <img src="http://10.0.4.41:9090/sttv.webp" alt="STTV" />
             </a>
-            <a href="/tventerpriseseapage"
+            <a href="/tventerpriseseapage">
                 <img src="http://10.0.4.41:9090/enterprise.webp" alt="enterprise" />
             </a>
-            <a href="/tvnexgenseapage"
+            <a href="/tvnexgenseapage">
                 <img src="http://10.0.4.41:9090/nextgen.webp" alt="next generation" />
             </a>
             <a href="tvdiscoveryseapage">
                 <img src="http://10.0.4.41:9090/discovery.webp" alt="discovery" />
             </a>
-            <a href="/tvpicardseapage"
+            <a href="/tvpicardseapage">
                 <img src="http://10.0.4.41:9090/picard.webp" alt="picard" />
-            <a href="/tvlowerdecksseapage"
+            </a>
+            <a href="/tvlowerdecksseapage">
                 <img src="http://10.0.4.41:9090/lowerdecks.webp" alt="lower decks" />
             </a>
             <a href="/tvprodigyseapage">

@@ -139,9 +139,9 @@ use crate::seasonpages::tvcowboybebopseapage::TVCowboyBebopSeaPage;
 use crate::seasonpages::tvdiscoveryseapage::TVDiscoverySeaPage;
 use crate::seasonpages::tventerpriseseapage::TVEnterpriseSeaPage;
 use crate::seasonpages::tvfalconwintersoldierseapage::TVFalconWinterSoldierSeaPage;
-use crate::seasonpages::tvfalloutseapage::TVFalloutSeaPage;
+use crate::seasonpages::tvfalloutseapage::TVFallOutSeaPage;
 use crate::seasonpages::tvfobarseapage::TVFobarSeaPage;
-use crate::seasonpages::tvforallmankindseapage::TVForAllMankindSeaPage;
+use crate::seasonpages::tvforallmankindseapage::TVForAllManKindSeaPage;
 use crate::seasonpages::tvfoundationseapage::TVFoundationSeaPage;
 use crate::seasonpages::tvhaloseapage::TVHaloSeaPage;
 use crate::seasonpages::tvhawkeyeseapage::TVHawkeyeSeaPage;
@@ -153,10 +153,11 @@ use crate::seasonpages::tvlostinspaceseapage::TVLostInSpaceSeaPage;
 use crate::seasonpages::tvlowerdecksseapage::TVLowerDecksSeaPage;
 use crate::seasonpages::tvmandalorianseapage::TVMandalorianSeaPage;
 use crate::seasonpages::tvmonarchlegacyofmonstersseapage::TVMonarchLegacyOfMonstersSeaPage;
+
 use crate::seasonpages::tvmoonknightseapage::TVMoonKnightSeaPage;
 use crate::seasonpages::tvnexgenseapage::TVNexGenSeaPage;
 use crate::seasonpages::tvnightskyseapage::TVNightSkySeaPage;
-use crate::seasonpages::tvobiwanseapage::TVOBiWanSeaPage;
+use crate::seasonpages::tvobiwanseapage::TVObiWanSeaPage;
 use crate::seasonpages::tvorvilleseapage::TVOrvilleSeaPage;
 use crate::seasonpages::tvpicardseapage::TVPicardSeaPage;
 use crate::seasonpages::tvprehistoricplanetseapage::TVPreHistoricPlanetSeaPage;
@@ -260,9 +261,9 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvdiscoveryseapage") view=TVDiscoverySeaPage />
                     <Route path=path!("/tventerpriseseapage") view=TVEnterpriseSeaPage />
                     <Route path=path!("/tvfalconwintersoldierseapage") view=TVFalconWinterSoldierSeaPage />
-                    <Route path=path!("/tvfalloutseapage") view=TVFalloutSeaPage />
+                    <Route path=path!("/tvfalloutseapage") view=TVFallOutSeaPage />
                     <Route path=path!("/tvfobarseapage") view=TVFobarSeaPage />
-                    <Route path=path!("/tvforallmankindseapage") view=TVForAllMankindSeaPage />
+                    <Route path=path!("/tvforallmankindseapage") view=TVForAllManKindSeaPage />
                     <Route path=path!("/tvfoundationseapage") view=TVFoundationSeaPage />
                     <Route path=path!("/tvhaloseapage") view=TVHaloSeaPage />
                     <Route path=path!("/tvhawkeyeseapage") view=TVHawkeyeSeaPage />
@@ -277,7 +278,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvmoonknightseapage") view=TVMoonKnightSeaPage />
                     <Route path=path!("/tvnexgenseapage") view=TVNexGenSeaPage />
                     <Route path=path!("/tvnightskyseapage") view=TVNightSkySeaPage />
-                    <Route path=path!("/tvobiwanseapage") view=TVOBiWanSeaPage />
+                    <Route path=path!("/tvobiwanseapage") view=TVObiWanSeaPage />
                     <Route path=path!("/tvorvilleseapage") view=TVOrvilleSeaPage />
                     <Route path=path!("/tvpicardseapage") view=TVPicardSeaPage />
                     <Route path=path!("/tvprehistoricplanetseapage") view=TVPreHistoricPlanetSeaPage />

@@ -8,7 +8,7 @@ pub fn TVMCUPage() -> impl IntoView {
             <a href="/tvsecretinvasion">
                 <img src="http://10.0.4.41:9090/secret_invasion.webp" alt="Secret Invation" />
             </a>
-            <a href="/tviamgrootseapage"
+            <a href="/tviamgrootseapage">
                 <img src="http://10.0.4.41:9090/iamgroot.webp" alt="I Am Groot" />
             </a>
             <a href="tvlokiseapage">

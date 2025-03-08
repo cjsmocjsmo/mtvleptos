@@ -2,7 +2,7 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn TVMonachLegacyOfMonstersSeaPage() -> impl IntoView {
+pub fn TVMonarchLegacyOfMonstersSeaPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
             <h1>MonachLegacyOfMonsters</h1>
