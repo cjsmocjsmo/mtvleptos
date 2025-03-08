@@ -11,7 +11,7 @@ pub fn TVStarWarsPage() -> impl IntoView {
             <a href="/tvahsokaseapage">
                 <img src="http://10.0.4.41:9090/ahsoka.webp" alt="ahsoka" />
             </a>
-            <a href="/tvandorsepage">
+            <a href="/tvandorseapage">
                 <img src="http://10.0.4.41:9090/andor.webp" alt="andor" />
             </a>
             <a href="/tvbadbatchseapage">
