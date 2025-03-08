@@ -4,8 +4,8 @@ use leptos::prelude::*;
 #[component]
 pub fn TV1923SeaPage() -> impl IntoView {
     view! {
-        <h1 class="seaH1">1923</h1>
         <div class="seaMainDiv">
+            <h1 class="seaH1">1923</h1>
             <h3 class="seaH3">Season 1</h3>
             <div class="seaInnerDiv">
                 <button class="seaBtn">1</button>
