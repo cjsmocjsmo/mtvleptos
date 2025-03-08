@@ -2,7 +2,7 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn TVFobarSeaPage() -> impl IntoView {
+pub fn TVFubarSeaPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
             <h1>Fobar</h1>

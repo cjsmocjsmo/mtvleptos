@@ -91,7 +91,7 @@ mod seasonpages {
     pub mod tventerpriseseapage;
     pub mod tvfalconwintersoldierseapage;
     pub mod tvfalloutseapage;
-    pub mod tvfobarseapage;
+    pub mod tvfubarseapage;
     pub mod tvforallmankindseapage;
     pub mod tvfoundationseapage;
     pub mod tvhaloseapage;
@@ -140,7 +140,7 @@ use crate::seasonpages::tvdiscoveryseapage::TVDiscoverySeaPage;
 use crate::seasonpages::tventerpriseseapage::TVEnterpriseSeaPage;
 use crate::seasonpages::tvfalconwintersoldierseapage::TVFalconWinterSoldierSeaPage;
 use crate::seasonpages::tvfalloutseapage::TVFallOutSeaPage;
-use crate::seasonpages::tvfobarseapage::TVFobarSeaPage;
+use crate::seasonpages::tvfubarseapage::TVFubarSeaPage;
 use crate::seasonpages::tvforallmankindseapage::TVForAllManKindSeaPage;
 use crate::seasonpages::tvfoundationseapage::TVFoundationSeaPage;
 use crate::seasonpages::tvhaloseapage::TVHaloSeaPage;
@@ -153,7 +153,6 @@ use crate::seasonpages::tvlostinspaceseapage::TVLostInSpaceSeaPage;
 use crate::seasonpages::tvlowerdecksseapage::TVLowerDecksSeaPage;
 use crate::seasonpages::tvmandalorianseapage::TVMandalorianSeaPage;
 use crate::seasonpages::tvmonarchlegacyofmonstersseapage::TVMonarchLegacyOfMonstersSeaPage;
-
 use crate::seasonpages::tvmoonknightseapage::TVMoonKnightSeaPage;
 use crate::seasonpages::tvnexgenseapage::TVNexGenSeaPage;
 use crate::seasonpages::tvnightskyseapage::TVNightSkySeaPage;
@@ -262,7 +261,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tventerpriseseapage") view=TVEnterpriseSeaPage />
                     <Route path=path!("/tvfalconwintersoldierseapage") view=TVFalconWinterSoldierSeaPage />
                     <Route path=path!("/tvfalloutseapage") view=TVFallOutSeaPage />
-                    <Route path=path!("/tvfobarseapage") view=TVFobarSeaPage />
+                    <Route path=path!("/tvfobarseapage") view=TVFubarSeaPage />
                     <Route path=path!("/tvforallmankindseapage") view=TVForAllManKindSeaPage />
                     <Route path=path!("/tvfoundationseapage") view=TVFoundationSeaPage />
                     <Route path=path!("/tvhaloseapage") view=TVHaloSeaPage />
