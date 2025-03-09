@@ -14,14 +14,6 @@ pub fn TV1923SeaPage() -> impl IntoView {
                     <button class="seaBtn">3</button>
                 </div>
             </div>
-            <div class="seaInnerDiv">
-                <h3 class="seaH3">Season 2</h3>
-                <div class="seaBtnGrp">
-                    <button class="seaBtn">1</button>
-                    <button class="seaBtn">2</button>
-                    <button class="seaBtn">3</button>
-                </div>
-            </div>
         </div>
     }
 }
