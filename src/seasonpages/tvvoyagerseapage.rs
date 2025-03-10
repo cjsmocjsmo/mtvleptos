@@ -13,8 +13,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes, set_episodes) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s1().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
@@ -24,8 +25,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes2, set_episodes2) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s2().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes2.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
@@ -35,8 +37,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes3, set_episodes3) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s3().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes3.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
@@ -46,8 +49,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes4, set_episodes4) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s4().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes4.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
@@ -57,8 +61,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes5, set_episodes5) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s5().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes5.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
@@ -68,8 +73,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes6, set_episodes6) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s6().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes6.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
@@ -79,8 +85,9 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
     let (episodes7, set_episodes7) = signal(Vec::new());
     spawn_local(async move {
         match fetch_episodes_s7().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes7.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),

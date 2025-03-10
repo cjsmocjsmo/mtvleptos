@@ -14,8 +14,9 @@ pub fn TVContinentalSeaPage() -> impl IntoView {
 
     spawn_local(async move {
         match fetch_episodes().await {
-            Ok(data) => {
-                log::info!("Fetched episodes data: {:?}", data); // Debugging log
+            Ok(mut data) => {
+                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
                 set_episodes.set(data);
             },
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
