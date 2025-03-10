@@ -5,10 +5,10 @@ use leptos::prelude::*;
 pub fn TVFantasyPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-            <a href="/housefothedragonseapage">
+            <a href="/tvhousefothedragonseapage">
                 <img src="http://10.0.4.41:9090/houseofthedragon.webp" alt="House of the Dragon" />
             </a>
-            <a href="/thelordoftheringsringsofpowerseapage">
+            <a href="/tvthelordoftheringsringsofpowerseapage">
                 <img src="http://10.0.4.41:9090/thelordoftheringsringsofpower.webp" alt="The Rings of Power" />
             </a>
             <a href="/tvwheeloftimeseapage">

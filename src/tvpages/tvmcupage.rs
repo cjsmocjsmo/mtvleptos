@@ -5,13 +5,13 @@ use leptos::prelude::*;
 pub fn TVMCUPage() -> impl IntoView {
     view! {
         <div class="tv-ass">
-            <a href="/tvsecretinvasion">
+            <a href="/tvsecretinvasionseapage">
                 <img src="http://10.0.4.41:9090/secret_invasion.webp" alt="Secret Invation" />
             </a>
             <a href="/tviamgrootseapage">
                 <img src="http://10.0.4.41:9090/iamgroot.webp" alt="I Am Groot" />
             </a>
-            <a href="tvlokiseapage">
+            <a href="/tvlokiseapage">
                 <img src="http://10.0.4.41:9090/loki.webp" alt="Loki" />
             </a>
             <a href="/tvmoonknightseapage">

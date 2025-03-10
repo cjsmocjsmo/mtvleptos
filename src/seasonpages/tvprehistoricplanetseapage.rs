@@ -25,7 +25,7 @@ pub fn TVPreHistoricPlanetSeaPage() -> impl IntoView {
 
     view! {
         <div class="seaMainDiv">
-            <h1 class="seaH1">WandaVision</h1>
+            <h1 class="seaH1">PreHistoric Planet</h1>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
