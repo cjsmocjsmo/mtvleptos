@@ -23,17 +23,17 @@ pub fn TVFallOutSeaPage() -> impl IntoView {
         }
     });
     
-    let (episodes2, set_episodes2) = signal(Vec::new());
-    spawn_local(async move {
-        match fetch_episodes_s2().await {
-            Ok(mut data) => {
-                data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
-                log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
-                set_episodes2.set(data);
-            },
-            Err(err) => log::error!("Error fetching episodes data: {:?}", err),
-        }
-    });
+    // let (episodes2, set_episodes2) = signal(Vec::new());
+    // spawn_local(async move {
+    //     match fetch_episodes_s2().await {
+    //         Ok(mut data) => {
+    //             data.sort_by(|a, b| a.Episode.cmp(&b.Episode));
+    //             log::info!("Fetched and sorted episodes data: {:?}", data); // Debugging log
+    //             set_episodes2.set(data);
+    //         },
+    //         Err(err) => log::error!("Error fetching episodes data: {:?}", err),
+    //     }
+    // });
     
     view! {
         <div class="seaMainDiv">
@@ -46,25 +46,25 @@ pub fn TVFallOutSeaPage() -> impl IntoView {
                     }).collect_view()}
                 </div>
             </div>
-            <div class="seaInnerDiv">
-                <h3 class="seaH3">Season 2</h3>
-                <div class="seaBtnGrp">
-                    {move || episodes2.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
-                </div>
-            </div>
+            // <div class="seaInnerDiv">
+            //     <h3 class="seaH3">Season 2</h3>
+            //     <div class="seaBtnGrp">
+            //         {move || episodes2.get().iter().map(|episode| view! {
+            //             <button class="seaBtn">{episode.Episode.clone()}</button>
+            //         }).collect_view()}
+            //     </div>
+            // </div>
         </div>
     }
 }
 
 async fn fetch_episodes_s1() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/fallout1").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/fallout").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }
-async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/fallout2").await?;
-    let episodes2: Vec<Episode> = response.json().await?;
-    Ok(episodes2)
-}
+// async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
+//     let response = reqwest::get("http://10.0.4.41:7777/fallout2").await?;
+//     let episodes2: Vec<Episode> = response.json().await?;
+//     Ok(episodes2)
+// }
