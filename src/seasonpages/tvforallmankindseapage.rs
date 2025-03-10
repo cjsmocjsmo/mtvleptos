@@ -5,7 +5,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
-    episode_number: String,
+    Episode: String,
 }
 
 #[component]
@@ -62,7 +62,7 @@ pub fn TVForAllManKindSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
                     {move || episodes.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.episode_number.clone()}</button>
+                        <button class="seaBtn">{episode.Episode.clone()}</button>
                     }).collect_view()}
                 </div>
             </div>
@@ -70,7 +70,7 @@ pub fn TVForAllManKindSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 2</h3>
                 <div class="seaBtnGrp">
                     {move || episodes2.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.episode_number.clone()}</button>
+                        <button class="seaBtn">{episode.Episode.clone()}</button>
                     }).collect_view()}
                 </div>
             </div>
@@ -78,7 +78,7 @@ pub fn TVForAllManKindSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 3</h3>
                 <div class="seaBtnGrp">
                     {move || episodes3.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.episode_number.clone()}</button>
+                        <button class="seaBtn">{episode.Episode.clone()}</button>
                     }).collect_view()}
                 </div>
             </div>
@@ -86,7 +86,7 @@ pub fn TVForAllManKindSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 4</h3>
                 <div class="seaBtnGrp">
                     {move || episodes4.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.episode_number.clone()}</button>
+                        <button class="seaBtn">{episode.Episode.clone()}</button>
                     }).collect_view()}
                 </div>
             </div>

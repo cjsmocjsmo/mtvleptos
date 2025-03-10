@@ -5,7 +5,14 @@ use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
-    episode_number: String,
+    // TvId: String,
+    // Size: String,
+    // Catagory: String,
+    // Name: String,
+    // Season: String,
+    Episode: String,
+    // Path: String,
+    // Idx: String,
 }
 
 #[component]
@@ -29,7 +36,7 @@ pub fn TVShogunSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
                     {move || episodes.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.episode_number.clone()}</button>
+                        <button class="seaBtn">{episode.Episode.clone()}</button>
                     }).collect_view()}
                 </div>
             </div>
