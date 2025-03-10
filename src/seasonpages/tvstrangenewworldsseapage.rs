@@ -57,12 +57,12 @@ pub fn TVStrangeNewWorldsSeaPage() -> impl IntoView {
 }
 
 async fn fetch_episodes_s1() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.41:7777/strangenewworlds1").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/strangenewworlds1").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }
 async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.41:7777/strangenewworlds2").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/strangenewworlds2").await?;
     let episodes2: Vec<Episode> = response.json().await?;
     Ok(episodes2)
 }

@@ -38,7 +38,7 @@ pub fn TVAhsokaSeaPage() -> impl IntoView {
 }
 
 async fn fetch_episodes() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.41:7777/ahsoka1").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/ahsoka1").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }

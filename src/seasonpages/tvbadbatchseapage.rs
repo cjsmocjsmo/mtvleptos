@@ -75,17 +75,17 @@ pub fn TVBadBatchSeaPage() -> impl IntoView {
 }
 
 async fn fetch_episodes_s1() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.41:7777/badbatch1").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/badbatch1").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }
 async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.41:7777/badbatch2").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/badbatch2").await?;
     let episodes2: Vec<Episode> = response.json().await?;
     Ok(episodes2)
 }
 async fn fetch_episodes_s3() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.41:7777/badbatch3").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/badbatch3").await?;
     let episodes3: Vec<Episode> = response.json().await?;
     Ok(episodes3)
 }
