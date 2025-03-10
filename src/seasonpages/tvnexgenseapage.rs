@@ -158,43 +158,43 @@ pub fn TVNexGenSeaPage() -> impl IntoView {
 }
 
 async fn fetch_episodes_s1() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen1").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG1").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }
 
 async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen2").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG2").await?;
     let episodes2: Vec<Episode> = response.json().await?;
     Ok(episodes2)
 }
 
 async fn fetch_episodes_s3() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen3").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG3").await?;
     let episodes3: Vec<Episode> = response.json().await?;
     Ok(episodes3)
 }
 
 async fn fetch_episodes_s4() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen4").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG4").await?;
     let episodes4: Vec<Episode> = response.json().await?;
     Ok(episodes4)
 }
 
 async fn fetch_episodes_s5() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen5").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG5").await?;
     let episodes5: Vec<Episode> = response.json().await?;
     Ok(episodes5)
 }
 
 async fn fetch_episodes_s6() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen6").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG6").await?;
     let episodes6: Vec<Episode> = response.json().await?;
     Ok(episodes6)
 }
 
 async fn fetch_episodes_s7() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/nextgen7").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/TNG7").await?;
     let episodes7: Vec<Episode> = response.json().await?;
     Ok(episodes7)
 }
