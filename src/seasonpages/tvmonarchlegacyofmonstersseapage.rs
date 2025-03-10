@@ -39,7 +39,7 @@ pub fn TVMonarchLegacyOfMonstersSeaPage() -> impl IntoView {
 }
 
 async fn fetch_episodes() -> Result<Vec<Episode>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/monarchlegacyofmonsters").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/monarch").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }

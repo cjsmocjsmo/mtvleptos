@@ -17,7 +17,7 @@ pub fn TVSciFiPage() -> impl IntoView {
             <a href="/tvorvilleseapage">
                 <img src="http://10.0.4.41:9090/orville.webp" alt="orville" />
             </a>
-            <a href="/tvhalorseapage">
+            <a href="/tvhaloseapage">
                 <img src="http://10.0.4.41:9090/halo.webp" alt="halo" />
             </a>
             <a href="/tvforallmankindseapage">

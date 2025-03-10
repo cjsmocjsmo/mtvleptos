@@ -25,7 +25,7 @@ pub fn TVAndorSeaPage() -> impl IntoView {
 
     view! {
         <div class="seaMainDiv">
-            <h1 class="seaH1">1923</h1>
+            <h1 class="seaH1">Andor</h1>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
