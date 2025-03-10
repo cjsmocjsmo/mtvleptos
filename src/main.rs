@@ -290,7 +290,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvskeletoncrewseapage") view=TVSkeletonCrewSeaPage />
                     <Route path=path!("/tvstrangenewworldsseapage") view=TVStrangeNewWorldsSeaPage />
                     <Route path=path!("/tvsttvseapage") view=TVSTTVSeaPage />
-                    <Route path=path!("/tvtailsofthejediseapage") view=TVTalesOfTheJediSeaPage />
+                    <Route path=path!("/tvtalesofthejediseapage") view=TVTalesOfTheJediSeaPage />
                     <Route path=path!("/tvthelordoftheringsringsofpowerseapage") view=TVTheLordOfTheRingsRingsOfPowerSeaPagePage />
                     <Route path=path!("/tvvisionsseapage") view=TVVisionsSeaPage />
                     <Route path=path!("/tvvoyagerseapage") view=TVVoyagerSeaPage />
