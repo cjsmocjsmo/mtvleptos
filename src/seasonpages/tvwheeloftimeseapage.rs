@@ -1,16 +1,19 @@
 #![allow(non_snake_case)]
-use leptos::{prelude::*, task::spawn_local};
+use leptos::prelude::*;
 use reqwest::Error;
+use wasm_bindgen_futures::spawn_local;
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
     Episode: String,
+    TvId: String,
 }
 
 #[component]
 pub fn TVWheelOfTimeSeaPage() -> impl IntoView {
     let (episodes, set_episodes) = signal(Vec::new());
+    let (episodes2, set_episodes2) = signal(Vec::new());
 
     spawn_local(async move {
         match fetch_episodes_s1().await {
@@ -22,8 +25,7 @@ pub fn TVWheelOfTimeSeaPage() -> impl IntoView {
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
         }
     });
-    
-    let (episodes2, set_episodes2) = signal(Vec::new());
+
     spawn_local(async move {
         match fetch_episodes_s2().await {
             Ok(mut data) => {
@@ -34,23 +36,43 @@ pub fn TVWheelOfTimeSeaPage() -> impl IntoView {
             Err(err) => log::error!("Error fetching episodes data: {:?}", err),
         }
     });
-    
+
     view! {
         <div class="seaMainDiv">
             <h1 class="seaH1">Wheel Of Time</h1>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
+                    {let episodes = episodes.get().clone(); move || episodes.iter().map(|episode| {
+                        let episode = episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = episode.TvId.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode.Episode.clone()}</button>
+                        }
                     }).collect_view()}
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 2</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes2.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
+                    {move || episodes2.get().iter().map(|episode| {
+                        let episode = episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = episode.TvId.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode.Episode.clone()}</button>
+                        }
                     }).collect_view()}
                 </div>
             </div>
@@ -63,8 +85,15 @@ async fn fetch_episodes_s1() -> Result<Vec<Episode>, Error> {
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
 }
+
 async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
     let response = reqwest::get("http://10.0.4.41:7777/wheeloftime2").await?;
     let episodes2: Vec<Episode> = response.json().await?;
     Ok(episodes2)
+}
+
+async fn send_get_request(tv_id: &str) -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/player_set_tv_media/{}", tv_id);
+    reqwest::get(&url).await?;
+    Ok(())
 }
