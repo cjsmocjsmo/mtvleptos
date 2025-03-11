@@ -44,7 +44,7 @@ pub fn TVWheelOfTimeSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
                     {
-                        let episodes_list = episodes.get();
+                        let episodes_list = episodes.get_untracked();
                         move || episodes_list.iter().map(|episode| {
                             let tv_id = episode.TvId.clone();
                             let episode_clone = episode.Episode.clone();
@@ -66,7 +66,7 @@ pub fn TVWheelOfTimeSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 2</h3>
                 <div class="seaBtnGrp">
                     {
-                        let episodes_list2 = episodes2.get();
+                        let episodes_list2 = episodes2.get_untracked();
                         move || episodes_list2.iter().map(|episode| {
                             let tv_id = episode.TvId.clone();
                             let episode_clone = episode.Episode.clone();
