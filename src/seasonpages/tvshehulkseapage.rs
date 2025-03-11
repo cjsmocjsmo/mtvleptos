@@ -5,6 +5,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
+    TvId: String,
     Episode: String,
 }
 
@@ -29,9 +30,23 @@ pub fn TVSheHulkSeaPage() -> impl IntoView {
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list = episodes.get_untracked();
+                    move || episodes_list.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
         </div>
@@ -42,4 +57,10 @@ async fn fetch_episodes() -> Result<Vec<Episode>, Error> {
     let response = reqwest::get("http://10.0.4.41:7777/shehulk").await?;
     let episodes: Vec<Episode> = response.json().await?;
     Ok(episodes)
+}
+
+async fn send_get_request(tv_id: &str) -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/set_player_tv_id/{}", tv_id);
+    reqwest::get(&url).await?;
+    Ok(())
 }

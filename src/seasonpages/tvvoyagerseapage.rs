@@ -5,6 +5,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
+    TvId: String,
     Episode: String,
 }
 
@@ -100,57 +101,155 @@ pub fn TVVoyagerSeaPage() -> impl IntoView {
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list = episodes.get_untracked();
+                    move || episodes_list.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 2</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes2.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list2 = episodes2.get_untracked();
+                    move || episodes_list2.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 3</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes3.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list3 = episodes3.get_untracked();
+                    move || episodes_list3.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 4</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes4.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list4 = episodes4.get_untracked();
+                    move || episodes_list4.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 5</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes5.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list5 = episodes5.get_untracked();
+                    move || episodes_list5.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 6</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes6.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list6 = episodes6.get_untracked();
+                    move || episodes_list6.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 7</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes7.get().iter().map(|episode| view! {
-                        <button class="seaBtn">{episode.Episode.clone()}</button>
-                    }).collect_view()}
+                {
+                    let episodes_list7 = episodes7.get_untracked();
+                    move || episodes_list7.iter().map(|episode| {
+                        let tv_id = episode.TvId.clone();
+                        let episode_clone = episode.Episode.clone();
+                        view! {
+                            <button class="seaBtn" on:click=move |_| {
+                                let tv_id = tv_id.clone();
+                                spawn_local(async move {
+                                    if let Err(err) = send_get_request(&tv_id).await {
+                                        log::error!("Error sending GET request: {:?}", err);
+                                    }
+                                });
+                            }>{episode_clone}</button>
+                        }
+                    }).collect_view()
+                }
                 </div>
             </div>
         </div>
@@ -197,4 +296,10 @@ async fn fetch_episodes_s7() -> Result<Vec<Episode>, Error> {
     let response = reqwest::get("http://10.0.4.41:7777/voyager7").await?;
     let episodes7: Vec<Episode> = response.json().await?;
     Ok(episodes7)
+}
+
+async fn send_get_request(tv_id: &str) -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/set_player_tv_id/{}", tv_id);
+    reqwest::get(&url).await?;
+    Ok(())
 }

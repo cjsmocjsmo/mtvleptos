@@ -5,6 +5,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
+    TvId: String,
     Episode: String,
 }
 
