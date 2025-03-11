@@ -41,7 +41,7 @@ pub fn GhostBustersPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
@@ -78,7 +78,7 @@ pub fn GodzillaPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 

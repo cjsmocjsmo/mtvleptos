@@ -56,7 +56,7 @@ pub fn SciFiPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
@@ -93,7 +93,7 @@ pub fn StalonePage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
@@ -130,7 +130,7 @@ pub fn StarTrekPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
@@ -167,7 +167,7 @@ pub fn StarWarsPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
@@ -204,7 +204,7 @@ pub fn SuperHerosPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get().clone(); move || infos.iter().map(|info| {
+            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
