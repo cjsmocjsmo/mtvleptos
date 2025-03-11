@@ -1,13 +1,13 @@
 #![allow(non_snake_case)]
 use leptos::prelude::*;
 use reqwest::Error;
-use wasm_bindgen_futures::spawn_local;
 use serde::Deserialize;
+use wasm_bindgen_futures::spawn_local;
 
 #[derive(Deserialize, Debug, Clone)]
 struct Episode {
-    Episode: String,
     TvId: String,
+    Episode: String,
 }
 
 #[component]
@@ -43,37 +43,45 @@ pub fn TVWheelOfTimeSeaPage() -> impl IntoView {
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
-                    {let episodes = episodes.get().clone(); move || episodes.iter().map(|episode| {
-                        let episode = episode.clone();
-                        view! {
-                            <button class="seaBtn" on:click=move |_| {
-                                let tv_id = episode.TvId.clone();
-                                spawn_local(async move {
-                                    if let Err(err) = send_get_request(&tv_id).await {
-                                        log::error!("Error sending GET request: {:?}", err);
-                                    }
-                                });
-                            }>{episode.Episode.clone()}</button>
-                        }
-                    }).collect_view()}
+                    {
+                        let episodes_list = episodes.get();
+                        move || episodes_list.iter().map(|episode| {
+                            let tv_id = episode.TvId.clone();
+                            let episode_clone = episode.Episode.clone();
+                            view! {
+                                <button class="seaBtn" on:click=move |_| {
+                                    let tv_id = tv_id.clone();
+                                    spawn_local(async move {
+                                        if let Err(err) = send_get_request(&tv_id).await {
+                                            log::error!("Error sending GET request: {:?}", err);
+                                        }
+                                    });
+                                }>{episode_clone}</button>
+                            }
+                        }).collect_view()
+                    }
                 </div>
             </div>
             <div class="seaInnerDiv">
                 <h3 class="seaH3">Season 2</h3>
                 <div class="seaBtnGrp">
-                    {move || episodes2.get().iter().map(|episode| {
-                        let episode = episode.clone();
-                        view! {
-                            <button class="seaBtn" on:click=move |_| {
-                                let tv_id = episode.TvId.clone();
-                                spawn_local(async move {
-                                    if let Err(err) = send_get_request(&tv_id).await {
-                                        log::error!("Error sending GET request: {:?}", err);
-                                    }
-                                });
-                            }>{episode.Episode.clone()}</button>
-                        }
-                    }).collect_view()}
+                    {
+                        let episodes_list2 = episodes2.get();
+                        move || episodes_list2.iter().map(|episode| {
+                            let tv_id = episode.TvId.clone();
+                            let episode_clone = episode.Episode.clone();
+                            view! {
+                                <button class="seaBtn" on:click=move |_| {
+                                    let tv_id = tv_id.clone();
+                                    spawn_local(async move {
+                                        if let Err(err) = send_get_request(&tv_id).await {
+                                            log::error!("Error sending GET request: {:?}", err);
+                                        }
+                                    });
+                                }>{episode_clone}</button>
+                            }
+                        }).collect_view()
+                    }
                 </div>
             </div>
         </div>
@@ -93,7 +101,7 @@ async fn fetch_episodes_s2() -> Result<Vec<Episode>, Error> {
 }
 
 async fn send_get_request(tv_id: &str) -> Result<(), Error> {
-    let url = format!("http://10.0.4.41:7777/player_set_tv_media/{}", tv_id);
+    let url = format!("http://10.0.4.41:7777/set_player_tv_id/{}", tv_id);
     reqwest::get(&url).await?;
     Ok(())
 }
