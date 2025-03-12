@@ -79,21 +79,21 @@ pub fn ArnoldPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
+            {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
-                <img 
-                    src={info.HttpThumbPath.clone()} 
-                    alt={info.Name.clone()}
-                    on:click=move |_| {
-                        let mov_id = info.MovId.clone();
-                        spawn_local(async move {
-                            if let Err(err) = send_get_request(&mov_id).await {
-                                log::error!("Error sending GET request: {:?}", err);
-                            }
-                        });
-                    }
-                />
+                    <img 
+                        src={info.HttpThumbPath.clone()} 
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
                 }
             }).collect_view()}
         </div>
