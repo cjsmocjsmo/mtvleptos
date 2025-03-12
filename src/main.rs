@@ -1,9 +1,9 @@
 use leptos::prelude::*;
 use leptos::mount::mount_to_body;
 use leptos_router::{components::*, path};
-use log::LevelFilter;
-use simplelog::*;
-use std::path::Path;use std::fs::File;
+// use log::LevelFilter;
+// use simplelog::*;
+// use std::path::Path;use std::fs::File;
 
 mod moviespage;
 use crate::moviespage::MovCatListPage;
@@ -181,20 +181,20 @@ use crate::seasonpages::tvwheeloftimeseapage::TVWheelOfTimeSeaPage;
 
 
 fn main() {
-    let log_file_path = "/home/teresa/Documents/mtv.log";
-    if !Path::new(log_file_path).exists() {
-        File::create(log_file_path).expect("Failed to create log file");
-    }
+    // let log_file_path = "/home/teresa/Documents/mtv.log";
+    // if !Path::new(log_file_path).exists() {
+    //     File::create(log_file_path).expect("Failed to create log file");
+    // }
 
-    // Initialize the logger
-    CombinedLogger::init(vec![
-        WriteLogger::new(
-            LevelFilter::Info,
-            Config::default(),
-            File::create(log_file_path).unwrap(),
-        ),
-    ])
-    .unwrap();
+    // // Initialize the logger
+    // CombinedLogger::init(vec![
+    //     WriteLogger::new(
+    //         LevelFilter::Info,
+    //         Config::default(),
+    //         File::create(log_file_path).unwrap(),
+    //     ),
+    // ])
+    // .unwrap();
 	console_error_panic_hook::set_once();
     mount_to_body(App);
 }
