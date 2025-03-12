@@ -186,9 +186,9 @@ fn main() {
 fn App() -> impl IntoView {
     view! {
         <Router>
+            <PlayerControls />
             <NavBar />
             <Header />
-            <PlayerControls />
             <main>
                 <Routes fallback=|| "Not Found.">
                     <Route path=path!("/") view=MovCatListPage />
