@@ -43,7 +43,7 @@ pub fn ActionPage() -> impl IntoView {
     view! {
         <div class="mov-row">
             {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
-                let info = info.clone();
+                // let info = info.clone();
                 view! {
                     <img 
                         src={info.HttpThumbPath.clone()} 
