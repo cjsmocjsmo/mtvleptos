@@ -1,5 +1,6 @@
 use leptos::prelude::*;
 use leptos::mount::mount_to_body;
+use leptos::task::spawn_local;
 use leptos_router::{components::*, path};
 
 mod moviespage;
@@ -327,10 +328,70 @@ fn NavBar() -> impl IntoView {
 fn PlayerControls() -> impl IntoView {
     view! {
         <div class="playerControls">
-            <button class="playerButton">"Previous"</button>
-            <button class="playerButton">"Play"</button>
-            <button class="playerButton">"Pause"</button>
-            <button class="playerButton">"Next"</button>
+            <button 
+                class="playerButton">"Previous"
+                on:click=move |_| {
+                    spawn_local(async move {
+                        if let Err(err) = send_previous().await {
+                            log::error!("Error sending GET request: {:?}", err);
+                        }
+                    });
+                }
+            </button>
+            <button 
+                class="playerButton">"Play"
+                on:click=move |_| {
+                    spawn_local(async move {
+                        if let Err(err) = send_play().await {
+                            log::error!("Error sending GET request: {:?}", err);
+                        }
+                    });
+                }
+            </button>
+            <button 
+                class="playerButton">"Pause"
+                on:click=move |_| {
+                    spawn_local(async move {
+                        if let Err(err) = send_pause().await {
+                            log::error!("Error sending GET request: {:?}", err);
+                        }
+                    });
+                }
+            </button>
+            <button 
+                class="playerButton">"Next"
+                on:click=move |_| {
+                    spawn_local(async move {
+                        if let Err(err) = send_next().await {
+                            log::error!("Error sending GET request: {:?}", err);
+                        }
+                    });
+                }
+            </button>
         </div>
     }
+}
+
+async fn send_previous() -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/previous");
+    reqwest::get(&url).await?;
+    Ok(())
+}
+
+async fn send_play() -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/play");
+    reqwest::get(&url).await?;
+    Ok(())
+}
+
+async fn send_pause() -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/pause");
+    reqwest::get(&url).await?;
+    Ok(())
+}
+
+async fn send_next() -> Result<(), Error> {
+    let url = format!("http://10.0.4.41:7777/next");
+    reqwest::get(&url).await?;
+    Ok(())
 }
