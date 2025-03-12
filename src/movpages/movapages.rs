@@ -99,3 +99,4 @@ pub fn ArnoldPage() -> impl IntoView {
         </div>
     }
 }
+
