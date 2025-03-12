@@ -45,6 +45,7 @@ pub fn ActionPage() -> impl IntoView {
             {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
                 let info = info.clone();
                 println!("{:?}", info);
+                log::info!("{:?}", info);
                 view! {
                     <img 
                         src={info.HttpThumbPath.clone()} 
