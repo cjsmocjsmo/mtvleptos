@@ -42,8 +42,7 @@ pub fn TVAlteredCarbonSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
                 {
-                    let episodes_list = episodes.get_untracked();
-                    move || episodes_list.iter().map(|episode| {
+                    let episodes_list = move || episodes.get().clone(); move || episodes_list().iter().map(|episode| {
                         let tv_id = episode.TvId.clone();
                         let episode_clone = episode.Episode.clone();
                         view! {
@@ -64,8 +63,7 @@ pub fn TVAlteredCarbonSeaPage() -> impl IntoView {
                 <h3 class="seaH3">Season 1</h3>
                 <div class="seaBtnGrp">
                 {
-                    let episodes_list2 = episodes2.get_untracked();
-                    move || episodes_list2.iter().map(|episode| {
+                    let episodes_list2 = move || episodes2.get().clone(); move || episodes_list2().iter().map(|episode| {
                         let tv_id = episode.TvId.clone();
                         let episode_clone = episode.Episode.clone();
                         view! {
