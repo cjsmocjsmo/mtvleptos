@@ -41,7 +41,7 @@ pub fn PandasPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
+            {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
@@ -79,7 +79,7 @@ pub fn PiratesPage() -> impl IntoView {
 
     view! {
         <div class="mov-row">
-            {let infos = infos.get_untracked().clone(); move || infos.iter().map(|info| {
+            {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
                     <img 
