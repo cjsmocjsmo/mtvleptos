@@ -330,7 +330,7 @@ fn PlayerControls() -> impl IntoView {
     view! {
         <footer class="playerControls">
             <button 
-                class="playerButton">"Previous"
+                class="playerButton"
                 on:click=move |_| {
                     spawn_local(async move {
                         if let Err(err) = send_previous().await {
@@ -338,9 +338,11 @@ fn PlayerControls() -> impl IntoView {
                         }
                     });
                 }
+            >
+                "Previous"
             </button>
             <button 
-                class="playerButton">"Play"
+                class="playerButton"
                 on:click=move |_| {
                     spawn_local(async move {
                         if let Err(err) = send_play().await {
@@ -348,9 +350,11 @@ fn PlayerControls() -> impl IntoView {
                         }
                     });
                 }
+            >
+                "Play"
             </button>
             <button 
-                class="playerButton">"Pause"
+                class="playerButton"
                 on:click=move |_| {
                     spawn_local(async move {
                         if let Err(err) = send_pause().await {
@@ -358,9 +362,11 @@ fn PlayerControls() -> impl IntoView {
                         }
                     });
                 }
+            >
+                "Pause"
             </button>
             <button 
-                class="playerButton">"Next"
+                class="playerButton"
                 on:click=move |_| {
                     spawn_local(async move {
                         if let Err(err) = send_next().await {
@@ -368,6 +374,8 @@ fn PlayerControls() -> impl IntoView {
                         }
                     });
                 }
+            >
+                "Next"
             </button>
         </footer>
     }
