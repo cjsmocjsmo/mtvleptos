@@ -21,9 +21,16 @@
 		color: white;
 	} */
 	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		color: white;
+		height: 50px;
+		margin: .25em;
 		position: sticky;
 		top: 0;
-		background-color: white; /* Adjust the background color as needed */
+		background-color: darkslategray; /* Adjust the background color as needed */
 		z-index: 1000; /* Ensure the nav bar is above other content */
 		padding: 10px; /* Adjust padding as needed */
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
@@ -38,28 +45,32 @@
 	.navItem:hover {
 		text-decoration: underline; /* Optional: Add underline on hover */
 	}
-	
+
 	.playerControls {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-		background-color: darkslategray;
-		height: 50px;
-		margin: .25em;
-	}
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: darkslategray;
+        height: 50px;
+        margin: .25em;
+        position: sticky;
+        bottom: 0;
+        z-index: 1000; /* Ensure the footer is above other content */
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    }
 
 	.playerButton {
-		width: 70px;
-		height: 30px;
-		text-decoration: none;
-		color: white;
-		background-color: transparent;
-		border: solid;
-		border-color: blueviolet;
-		border-width: 2px;
-		border-radius: 12px;
-	}
+        width: 70px;
+        height: 30px;
+        text-decoration: none;
+        color: white;
+        background-color: transparent;
+        border: solid;
+        border-color: blueviolet;
+        border-width: 2px;
+        border-radius: 12px;
+    }
 
 	.header {
 		color: mediumspringgreen;
