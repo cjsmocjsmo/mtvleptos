@@ -300,6 +300,7 @@ fn App() -> impl IntoView {
                 </Routes>
                 
             </main>
+            <span></span>
             <PlayerControls />
         </Router>
     }
