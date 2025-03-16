@@ -187,7 +187,6 @@ fn main() {
 fn App() -> impl IntoView {
     view! {
         <Router>
-            <PlayerControls />
             <NavBar />
             <Header />
             <main>
@@ -299,7 +298,9 @@ fn App() -> impl IntoView {
                     <Route path=path!("/tvwandavisionseapage") view=TVWandaVisionSeaPage />
                     <Route path=path!("/tvwheeloftimeseapage") view=TVWheelOfTimeSeaPage />
                 </Routes>
+                
             </main>
+            <PlayerControls />
         </Router>
     }
 }
@@ -327,7 +328,7 @@ fn NavBar() -> impl IntoView {
 #[component]
 fn PlayerControls() -> impl IntoView {
     view! {
-        <div class="playerControls">
+        <footer class="playerControls">
             <button 
                 class="playerButton">"Previous"
                 on:click=move |_| {
@@ -368,7 +369,7 @@ fn PlayerControls() -> impl IntoView {
                     });
                 }
             </button>
-        </div>
+        </footer>
     }
 }
 
