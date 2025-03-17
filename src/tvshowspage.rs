@@ -1,8 +1,12 @@
 use leptos::prelude::*;
 
+use crate::NavBar;
+
 #[component]
 pub fn TVShowsListPage() -> impl IntoView {
     view! {
+        
+        <NavBar />
         <main>
             <div class="tvshows-section">
                 <div class="tvshows-sectionDiv">
