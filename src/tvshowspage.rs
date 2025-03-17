@@ -16,5 +16,6 @@ pub fn TVShowsListPage() -> impl IntoView {
                 <a class="tvshows-sectionDivItem" href="/tvwesterns">"Westerns"</a>
             </div>
         </div>
+        <span></span>
     }
 }
