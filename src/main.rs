@@ -34,6 +34,7 @@ mod movpages {
     pub mod movvpages;
     pub mod movxpages;
 }
+
 use crate::movpages::movapages::{ActionPage, ArnoldPage};
 use crate::movpages::movbpages::{BruceLeePage, BruceWillisPage, BuzzPage};
 use crate::movpages::movcpages::{CartoonsPage, CharlieBrownPage, ChuckNorrisPage, ComedyPage};
