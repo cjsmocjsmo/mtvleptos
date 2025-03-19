@@ -18,11 +18,11 @@ pub fn SearchPage() -> impl IntoView {
     view! {
         <div class="searchDiv">
             <div class="searchInnerDiv">
-		        <Form method="GET" action="">
+		        <form method="GET" action="">
                 	<input class="search-input" type="text" placeholder="Search..." />
                 	// <button class="searchButton">Search</button>
 			        <input class="searchButton" type="submit" />
-		        </Form>
+		        </form>
             </div>
             <span></span>
             <span></span>
